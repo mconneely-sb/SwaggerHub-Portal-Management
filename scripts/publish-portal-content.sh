@@ -113,6 +113,7 @@ function portal_branding_image_post() {
     branding_image_id=$(echo "$response" | jq -r .id)
 
     log_message $INFO "Done uploading branding image."
+    log_message $DEBUG "Branding image uploading response: $response"
     log_message $DEBUG "Exit portal_product_branding_image_post"
 }
 
@@ -149,6 +150,7 @@ function portal_product_doc_image_post() {
         --data-binary "@$full_path")
   
     log_message $INFO "Done uploading documentation image."
+    log_message $DEBUG "Doc uploading response: $response"
     log_message $DEBUG "Exit portal_product_doc_image_post"
 }
 
@@ -278,13 +280,14 @@ function load_and_process_product_manifest_content_metadata() {
                 escaped_attachment_name=$(escape_sed "$attachment_name")
                 escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                if [[ "$type" == "html" ]]; then
-                    # Replace image src in HTML fragments
-                    markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownContent")
-                else
-                    # Replace markdown image path
-                    markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
-                fi
+                # Replace image src in HTML fragments
+                markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownContent")
+                
+                # Replace image srcset in HTML fragments
+                markdownContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownContent") 
+
+                # Replace markdown image path
+                markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownContent")
             done
 
             log_message $INFO "Attachment replacement done."
@@ -340,13 +343,14 @@ function load_and_process_product_manifest_content_metadata() {
                     escaped_attachment_name=$(escape_sed "$attachment_name")
                     escaped_attachment_url=$(escape_sed "$attachment_url")
 
-                    if [[ "$child_type" == "html" ]]; then
-                        # Replace image src in HTML fragments
-                        markdownContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownChildContent")
-                    else
-                        # Replace markdown image path
-                        markdownContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
-                    fi
+                    # Replace image src in HTML fragments
+                    markdownChildContent=$(sed -E "s#src=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#src=\"${attachment_url}\"#g" <<< "$markdownChildContent")
+
+                    # Replace image srcset in HTML fragments
+                    markdownChildContent=$(sed -E "s#srcset=[\"']\.\/images\/embedded\/${escaped_attachment_name}[\"']#srcset=\"${attachment_url}\"#g" <<< "$markdownChildContent") 
+
+                    # Replace markdown image path
+                    markdownChildContent=$(sed -E "s#\!\[$escaped_attachment_name\]\(\.\/images\/embedded\/$escaped_attachment_name\)#\!\[$escaped_attachment_name\]\($escaped_attachment_url\)#g" <<< "$markdownChildContent")
                 done                
 
                 log_message $INFO "Attachment replacement in nested content done."            
@@ -466,6 +470,7 @@ function portal_product_upsert() {
 
     portal_product_get_default_section_id "$product_id"
     log_message $INFO "Done upserting product."
+    log_message $DEBUG "Product patch response: $response"
     log_message $DEBUG "Exit portal_product_upsert"
 }
 
@@ -493,6 +498,7 @@ function portal_product_post() {
 
     product_id=$(echo "$response" | jq -r .id)
     log_message $INFO "Done creating product: $product_id"
+    log_message $DEBUG "Product creation response: $response"
     log_message $DEBUG "Exit portal_product_post"
 }
 
@@ -719,10 +725,10 @@ function portal_product_toc_markdown_post() {
             }
         }")
 
-    log_message $DEBUG "Response: $response"
     product_toc_id=$(echo "$response" | jq -r .id)
     document_id=$(echo "$response" | jq -r .documentId)
     log_message $INFO "Done creating markdown TOC."
+    log_message $DEBUG "TOC post response: $response"
     log_message $DEBUG "Exit portal_product_toc_markdown_post"
 }
 
@@ -826,6 +832,7 @@ function portal_product_publish() {
     publish_response_check "$response"
     
     log_message $INFO "Done publishing product."
+    log_message $DEBUG "Portal product PUT response: $response"
     log_message $DEBUG "Exit portal_product_publish"
 }
 
