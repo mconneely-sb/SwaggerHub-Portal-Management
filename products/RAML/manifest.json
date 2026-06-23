@@ -22,7 +22,7 @@
             "order": 1,
             "parent": "gh-raml",
             "name": "Overview",
-            "slug": "gh-overview",
+            "slug": "gh-raml-overview",
             "type": "markdown",
             "contentUrl": "Overview.md"
         },
@@ -38,7 +38,7 @@
             "order": 3,
             "parent": "gh-raml",
             "name": "Test API",
-            "slug": "gh-test-api",
+            "slug": "gh-raml-test-api",
             "type": "markdown",
             "contentUrl": "Test-API.md"
         }
