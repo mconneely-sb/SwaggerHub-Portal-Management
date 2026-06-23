@@ -1,0 +1,38 @@
+{
+    "productMetadata": {
+        "description": "This product gives the ability to programmatically embedded a Pet adoption workflow into your application 🐶",
+        "slug": "pet-adoptions",
+        "public": true,
+        "hidden": false,
+        "logo": "images/AdoptionsAPI.png",
+        "logoDark": "images/AdoptionsAPI.png",
+        "autoPublish": true,
+        "validateAPIs": true
+    },
+    "contentMetadata": [
+        {
+            "order": 0,
+            "parent": "",
+            "name": "RAML",
+            "slug": "gh-raml",
+            "type": "markdown",
+            "contentUrl": "RAML.md"
+        },
+        {
+            "order": 1,
+            "parent": "gh-raml",
+            "name": "Overview",
+            "slug": "gh-overview",
+            "type": "markdown",
+            "contentUrl": "Overview.md"
+        },
+        {
+            "order": 2,
+            "parent": "gh-raml",
+            "name": "RAML Documentation",
+            "slug": "gh-raml-documentation",
+            "type": "markdown",
+            "contentUrl": "RAML-Documentation.md"
+        }
+    ]
+}
