@@ -25,22 +25,22 @@
             "slug": "client-code-csharp-2",
             "type": "markdown",
             "contentUrl": "Client-Code-Csharp.md"
-        },
+        },    
         {
             "order": 2,
-            "parent": "getting-started-with-pet-adoptions-2",
-            "name": "Client Code (Typescript)",
-            "slug": "client-code-typescript-2",
-            "type": "markdown",
-            "contentUrl": "Client-Code-Typescript.md"
-        },        
-        {
-            "order": 3,
             "parent": "getting-started-with-pet-adoptions-2",
             "name": "RAML Documentation",
             "slug": "raml-documentation-2",
             "type": "markdown",
             "contentUrl": "RAML-Documentation.md"
+        },        
+        {
+            "order": 3,
+            "parent": "getting-started-with-pet-adoptions-2",
+            "name": "Test API",
+            "slug": "test-api-2",
+            "type": "markdown",
+            "contentUrl": "Test-API.md"
         }
         
     ]
