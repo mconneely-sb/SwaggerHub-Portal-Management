@@ -3,7 +3,7 @@ name: Docs as Code PR and Commit Validation
 on:
   push:
     branches:
-      - '*'
+      - 'main'
   pull_request:
     branches:
       - '*'
