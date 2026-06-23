@@ -27,7 +27,7 @@
             "contentUrl": "RAML-Documentation.md"
         },        
         {
-            "order": 3,
+            "order": 2,
             "parent": "getting-started-with-raml",
             "name": "Test API",
             "slug": "test-api-2",
