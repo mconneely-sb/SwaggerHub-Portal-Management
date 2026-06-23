@@ -1,10 +1,10 @@
  # Users Specification
 
-A sample client implementation of the pet adoption workflow in typescript.
+The user api docs.
 
 
 ```typescript
-// Assuming node environment. If using in a browser, fetch is globally available.
+// Docs in yaml format. This is a sample of the user api specification in RAML format.
 
 #%RAML 1.0
 title: User API
