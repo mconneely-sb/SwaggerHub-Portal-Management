@@ -1,6 +1,6 @@
 {
     "productMetadata": {
-        "description": "This product gives the ability to programmatically embedded a Pet adoption workflow into your application 🐶",
+        "description": "This product gives the ability to use User API",
         "slug": "pet-adoptions",
         "public": true,
         "hidden": false,
