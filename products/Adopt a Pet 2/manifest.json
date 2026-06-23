@@ -33,6 +33,15 @@
             "slug": "client-code-typescript-2",
             "type": "markdown",
             "contentUrl": "Client-Code-Typescript.md"
+        },        
+        {
+            "order": 3,
+            "parent": "getting-started-with-pet-adoptions-2",
+            "name": "RAML Documentation",
+            "slug": "raml-documentation-2",
+            "type": "markdown",
+            "contentUrl": "RAML-Documentation.md"
         }
+        
     ]
 }
