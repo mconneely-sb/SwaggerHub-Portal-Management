@@ -1,7 +1,7 @@
 {
     "productMetadata": {
-        "description": "This product gives the ability to programmatically embedded a Pet adoption workflow into your application 🐶",
-        "slug": "pet-adoptions",
+        "description": "This product gives the ability to programmatically embedded a RAML documentation workflow into your application 📄",
+        "slug": "raml-adoptions",
         "public": true,
         "hidden": false,
         "logo": "images/AdoptionsAPI.png",
