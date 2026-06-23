@@ -1,7 +1,7 @@
 {
     "productMetadata": {
-        "description": "This product gives the ability to programmatically embedded a Pet adoption workflow into your application 🐶",
-        "slug": "pet-adoptions-2",
+        "description": "This product gives the ability to programmatically use the RAML documentation to create a new API or update an existing API.",
+        "slug": "raml-doc-2",
         "public": true,
         "hidden": false,
         "logo": "images/AdoptionsAPI.png",

@@ -1,6 +1,6 @@
 # Test API
 
-**A sample client implementation of the pet adoption workflow in csharp.**
+**How to Test the user api.**
 
 To test the external User API
 
