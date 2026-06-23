@@ -13,10 +13,10 @@
         {
             "order": 0,
             "parent": "",
-            "name": "RAML",
+            "name": "Users - External RAML API Documentation",
             "slug": "gh-raml",
             "type": "markdown",
-            "contentUrl": "RAML.md"
+            "contentUrl": "Users-External-RAML-API-Documentation.md"
         },
         {
             "order": 1,
