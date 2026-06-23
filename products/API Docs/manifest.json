@@ -13,14 +13,14 @@
         {
             "order": 0,
             "parent": "",
-            "name": "Getting Started with Pet Adoptions",
-            "slug": "getting-started-with-pet-adoptions",
+            "name": "Getting Started with User API",
+            "slug": "getting-started-with-user-api",
             "type": "markdown",
-            "contentUrl": "Getting-Started-With-Pet-Adoptions.md"
+            "contentUrl": "Getting-Started-User-API.md"
         },
         {
             "order": 1,
-            "parent": "getting-started-with-pet-adoptions",
+            "parent": "getting-started-with-user-api",
             "name": "Client Code (C#)",
             "slug": "client-code-csharp",
             "type": "markdown",
@@ -28,27 +28,11 @@
         },
         {
             "order": 2,
-            "parent": "getting-started-with-pet-adoptions",
+            "parent": "getting-started-with-user-api",
             "name": "Client Code (Typescript)",
             "slug": "client-code-typescript",
             "type": "markdown",
             "contentUrl": "Client-Code-Typescript.md"
-        },
-        {
-            "order": 5,
-            "parent": "",
-            "name": "Pets API",
-            "type": "apiUrl",
-            "slug": "pets",
-            "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/pets/1.0.0/swagger.json"
-        },
-        {
-            "order": 6,
-            "parent": "",
-            "name": "Adoptions API",
-            "type": "apiUrl",
-            "slug": "adoptions",
-            "contentUrl": "https://api.swaggerhub.com/apis/frank-kilcommins/adoptions/1.0.0/swagger.json"
         }
     ]
 }
