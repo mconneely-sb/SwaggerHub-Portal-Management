@@ -3,7 +3,7 @@ name: Publish Portal Content
 on:
   push:
     branches:
-      - main
+      - raml
   workflow_dispatch:
     inputs:
       log_level:
