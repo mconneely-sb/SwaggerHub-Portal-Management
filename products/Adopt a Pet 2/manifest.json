@@ -21,14 +21,6 @@
         {
             "order": 1,
             "parent": "getting-started-with-raml",
-            "name": "Client Code (C#)",
-            "slug": "client-code-csharp-2",
-            "type": "markdown",
-            "contentUrl": "Client-Code-Csharp.md"
-        },    
-        {
-            "order": 2,
-            "parent": "getting-started-with-raml",
             "name": "RAML Documentation",
             "slug": "raml-documentation-2",
             "type": "markdown",
