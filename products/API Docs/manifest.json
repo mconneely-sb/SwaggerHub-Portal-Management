@@ -29,10 +29,10 @@
         {
             "order": 2,
             "parent": "getting-started-with-user-api",
-            "name": "Client Code (Typescript)",
-            "slug": "client-code-typescript",
+            "name": "Test API",
+            "slug": "test-api",
             "type": "markdown",
-            "contentUrl": "Client-Code-Typescript.md"
+            "contentUrl": "Test-API.md"
         }
     ]
 }
