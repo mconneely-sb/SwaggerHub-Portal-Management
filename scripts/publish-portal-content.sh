@@ -256,7 +256,8 @@ function load_and_process_product_manifest_content_metadata() {
         log_message $INFO "****************************************************************"
 
         if [ "${type,,}" == "apiurl" ]; then
-            portal_product_toc_api_reference_upsert "$name" "$slug" $order "$contentUrl" "$product_toc_id" "$type"
+             #portal_product_toc_api_reference_upsert "$name" "$slug" $order "$contentUrl" "$product_toc_id" "$type"
+             log_message $INFO "************** NO API Processing **************"
         else
             portal_product_toc_markdown_upsert "$name" "$slug" $order "$product_toc_id" "$type"
             log_message $INFO "Document ID: $document_id"
@@ -317,7 +318,7 @@ function load_and_process_product_manifest_content_metadata() {
 
             if [ "$child_type" == "apiUrl" ]; then
                 log_message $DEBUG "Processing API reference for : $child_name, $child_slug, $child_order, $child_contentUrl, $parent_toc_id"
-                portal_product_toc_api_reference_upsert "$child_name" "$child_slug" $child_order "$child_contentUrl" "$parent_toc_id"
+                #portal_product_toc_api_reference_upsert "$child_name" "$child_slug" $child_order "$child_contentUrl" "$parent_toc_id"
             else
                 log_message $DEBUG "Processing markdown for : $child_name, $child_slug, $child_order, $parent_toc_id", "$child_type"
                 portal_product_toc_markdown_upsert "$child_name" "$child_slug" $child_order "$parent_toc_id" "$child_type"
@@ -578,26 +579,26 @@ function portal_product_toc_get_id() {
     log_message $DEBUG "Exit portal_product_toc_get_id"
 }
 
-function portal_product_toc_api_reference_upsert() {
-    log_message $DEBUG "Enter portal_product_toc_api_reference_upsert"
-    local api_title=$1
-    local api_slug=$2
-    local content_order=$3
-    local api_url=$4
-    local parent_toc_id=$5
+# function portal_product_toc_api_reference_upsert() {
+#     log_message $DEBUG "Enter portal_product_toc_api_reference_upsert"
+#     local api_title=$1
+#     local api_slug=$2
+#     local content_order=$3
+#     local api_url=$4
+#     local parent_toc_id=$5
 
-    log_message $INFO "Upserting API reference: $api_title in product $product_id ..."
-    portal_product_toc_get_id "$section_id" "$api_title"
+#     log_message $INFO "Upserting API reference: $api_title in product $product_id ..."
+#     portal_product_toc_get_id "$section_id" "$api_title"
 
-    if [ -z "$product_toc_id" ] || [ "$product_toc_id" == "null" ]; then
-        portal_product_toc_api_reference_post "$section_id" "$api_title" "$api_slug" "$content_order" "$api_url" "$parent_toc_id"
-    else
-        portal_product_toc_api_reference_patch "$api_title" "$api_slug" "$content_order" "$api_url" "$product_toc_slug" "$parent_toc_id"
-    fi
+#     if [ -z "$product_toc_id" ] || [ "$product_toc_id" == "null" ]; then
+#         portal_product_toc_api_reference_post "$section_id" "$api_title" "$api_slug" "$content_order" "$api_url" "$parent_toc_id"
+#     else
+#         portal_product_toc_api_reference_patch "$api_title" "$api_slug" "$content_order" "$api_url" "$product_toc_slug" "$parent_toc_id"
+#     fi
 
-    log_message $INFO "Done upserting API reference."
-    log_message $DEBUG "Exit portal_product_toc_api_reference_upsert"
-}
+#     log_message $INFO "Done upserting API reference."
+#     log_message $DEBUG "Exit portal_product_toc_api_reference_upsert"
+# }
 
 function portal_product_toc_api_reference_post() {
     log_message $DEBUG "Enter portal_product_toc_api_reference_post"
