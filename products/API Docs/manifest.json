@@ -21,10 +21,10 @@
         {
             "order": 1,
             "parent": "getting-started-with-user-api",
-            "name": "Client Code (C#)",
-            "slug": "client-code-csharp",
+            "name": "RAML Documentation",
+            "slug": "raml-documentation",
             "type": "markdown",
-            "contentUrl": "Client-Code-Csharp.md"
+            "contentUrl": "RAML-Documentation.md"
         },
         {
             "order": 2,
