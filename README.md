@@ -330,7 +330,7 @@ The action performs the following jobs:
 
 This action runs on upon merging into `main`. It performs all the checks as per above and assuming all validations pass, it then runs then publishes the content to the appropriate SwaggerHub Portal instance.
 
-The action performs the following jobs:
+The action performs the following job(s):
 
 1. `spell-check`: Performs spell checking on all of the markdown files under the _products_ folder (**note** to add a list of known good custom words update the ./custom-words.txt file)
 2. `validate-manifests`: Performs a JSON Schema validation check against the defined product manifest.json files to ensure they are correctly specified.
