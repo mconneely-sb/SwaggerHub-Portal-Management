@@ -1,54 +1,21 @@
-# Getting Started with the Pet Adoptions API Workflow
+# API Overview of RAML Documentation
 
-This **pet adoption** workflow provides a comprehensive process to `search `for, `select`, and `adopt `a pet. Utilizing two APIs, it starts by searching for available pets based on location, then moves to adopt a selected pet, confirm the adoption, update the pet's status to adopted, and finally confirm the pet's status update. The workflow is designed to be both developer and user-friendly, providing clear steps and expected outcomes. 
+The RAML (RESTful API Modeling Language) documentation provides a structured way to describe RESTful APIs. It includes details about endpoints, request/response formats, authentication methods, and more. This documentation serves as a guide for developers to understand how to interact with the API effectively.
 
-Following this workflow will greatly reduce your meantime to integration 🚀
+Endpoints: A list of available API endpoints and their functionalities.
 
-## Arazzo Workflow Metadata
-Here's some useful metadata about the supported workflow:
-| Metadata           | Value                                                                     |
-|--------------------|---------------------------------------------------------------------------|
-| Specification      | 1.0.0                                                         |
-| Title              | A pet adoptions workflow                                                   |
-| Summary            | Showcases how to search for and adopt a pet through a sequence of API calls |
-| Description        | Guides through searching for, selecting, and adopting an available pet.  |
-| Version            | 1.0.0                                                                     |
-| Source Descriptions| 2 (petsApiDescription, adoptionsApiDescription)                           |
+Request Methods: Supported HTTP methods (GET, POST, PUT, DELETE) for each endpoint.
 
-## Workflow: A Pet Purchasing Workflow
+Data Formats: Information on the expected request and response data formats (JSON, XML, etc.).
 
-### Summary
+Authentication: Details on how to authenticate requests, including token-based methods.
 
-This workflow guides you through the process of searching for and adopting a pet, covering pet selection, adoption initiation, adoption updating, adoption and pet confirmation checks.
+Test API
 
-### Step Overview
+The Test API section allows developers to experiment with the API in a controlled environment. It provides tools to send requests and view responses without affecting the production environment.
 
-Here's a breakdown of the steps you'll carry out to integrate this capability into your application:
-| # | Step ID               | Description                                     | Operation ID                                        | Parameters                | Success Criteria                   | Outputs                         |
-| ----|-----------------------|-------------------------------------------------|-----------------------------------------------------|---------------------------|------------------------------------|---------------------------------|
-|1️⃣ | getPetStep            | Retrieve a pet by status                        | `petsApiDescription.getPets`                          | status, location, token   | `$statusCode == 200  `               | availablePets                   |
-|2️⃣ | adoptPetStep          | Adopt a pet                                     | `adoptionsApiDescription.postAdoption`                | petId, token              | `$statusCode == 201`                 | adoptionId                      |
-| 3️⃣ | confirmAdoptionStep   | Confirm the adoption by updating the status     | `adoptionsApiDescription.patchAdoptionStatus `        | adoptionId, token         | `$statusCode == 200`                 | N/A                             |
-| 4️⃣ | updatePetStep         | Update the pet status to `adopted`              | `petsApiDescription.patchPetStatus `                  | petId, token              | `$statusCode == 200  `               | N/A                             |
-| 5️⃣ | confirmPetStatusStep  | Confirm the pet status update to `adopted`      | `petsApiDescription.getPetById`                       | petId, token              | `$statusCode == 200`, `adopted `status | adoptedPetName, adoptedPetStatus, adoptedPetId, adoptedPetLocation |
+Interactive Console: A user-friendly interface to test API calls directly.
 
+Sample Requests: Predefined examples to help users understand how to structure their requests.
 
-### Graphical Representation of Workflow Steps
-
-![Arazzo-PlantUML.png](./images/embedded/Arazzo-PlantUML.png)
-
-![Arazzo-Mermaid.png](./images/embedded/Arazzo-Mermaid.png)
-
-### Developer Integration Guidance
-
-Developers integrating this workflow should note:
-
-* Authentication is crucial at each step, requiring a valid token.
-* The sequence of steps must be followed precisely for successful execution.
-* Proper error handling should be implemented to handle unsuccessful API calls or unmet success criteria.
-* Developers must ensure the correct mapping and passing of parameters between steps, especially for dynamically derived values like `petId`.
-
-### Client Code Samples
-
-* [csharp](https://frankkilcommins.portal.swaggerhub.com/pet-adoptions/docs/client-code-csharp)
-* [typescript](https://frankkilcommins.portal.swaggerhub.com/pet-adoptions/docs/client-code-typescript)
+Error Handling: Information on common error responses and how to troubleshoot them.
