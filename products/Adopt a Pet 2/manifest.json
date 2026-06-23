@@ -13,14 +13,14 @@
         {
             "order": 0,
             "parent": "",
-            "name": "Getting Started with Pet Adoptions",
-            "slug": "getting-started-with-pet-adoptions-2",
+            "name": "Getting Started with RAML",
+            "slug": "getting-started-with-raml",
             "type": "markdown",
-            "contentUrl": "Getting-Started-With-Pet-Adoptions.md"
+            "contentUrl": "Getting-Started-With-Raml.md"
         },
         {
             "order": 1,
-            "parent": "getting-started-with-pet-adoptions-2",
+            "parent": "getting-started-with-raml",
             "name": "Client Code (C#)",
             "slug": "client-code-csharp-2",
             "type": "markdown",
@@ -28,7 +28,7 @@
         },    
         {
             "order": 2,
-            "parent": "getting-started-with-pet-adoptions-2",
+            "parent": "getting-started-with-raml",
             "name": "RAML Documentation",
             "slug": "raml-documentation-2",
             "type": "markdown",
@@ -36,7 +36,7 @@
         },        
         {
             "order": 3,
-            "parent": "getting-started-with-pet-adoptions-2",
+            "parent": "getting-started-with-raml",
             "name": "Test API",
             "slug": "test-api-2",
             "type": "markdown",
